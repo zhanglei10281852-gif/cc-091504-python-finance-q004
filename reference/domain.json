@@ -1,0 +1,14 @@
+{
+  "clause_types": [
+    "redemption",
+    "put",
+    "conversion_price_reset",
+    "maturity"
+  ],
+  "price_sources": [
+    "official_close",
+    "temporary",
+    "corrected"
+  ],
+  "calendar": "CN_equity"
+}
