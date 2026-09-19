@@ -5,10 +5,44 @@
     "conversion_price_reset",
     "maturity"
   ],
+  "clause_states": [
+    "not_applicable",
+    "accumulating",
+    "counting",
+    "condition_met",
+    "expired",
+    "active",
+    "matured"
+  ],
+  "day_statuses": [
+    "counted",
+    "suspended",
+    "missing_price",
+    "temporary_only",
+    "retracted_price"
+  ],
   "price_sources": [
     "official_close",
     "temporary",
     "corrected"
   ],
+  "record_statuses": [
+    "active",
+    "superseded",
+    "retracted"
+  ],
+  "event_types": [
+    "cash_dividend",
+    "bonus_share",
+    "rights_issue",
+    "reset",
+    "suspension",
+    "retraction"
+  ],
+  "reference_statuses": [
+    "current",
+    "stale"
+  ],
+  "price_precision": "0.01",
   "calendar": "CN_equity"
 }

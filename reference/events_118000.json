@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "event_id": "EV-DIV-20260622",
+      "event_type": "cash_dividend",
+      "effective_date": "2026-06-22",
+      "params": {"amount": "0.30"},
+      "received_at": "2026-06-10T09:00:00+08:00"
+    },
+    {
+      "event_id": "EV-RESET-20260715",
+      "event_type": "reset",
+      "effective_date": "2026-07-15",
+      "params": {"new_price": "10.00"},
+      "received_at": "2026-07-14T19:30:00+08:00"
+    },
+    {
+      "event_id": "EV-SUSP-20260907",
+      "event_type": "suspension",
+      "params": {
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-08",
+        "reason": "筹划重大事项"
+      },
+      "received_at": "2026-09-04T20:00:00+08:00"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "bond_id": "118000",
+  "name": "示例转债",
+  "stock_code": "600000",
+  "calendar_id": "CN_equity",
+  "list_date": "2026-01-05",
+  "maturity_date": "2032-01-04",
+  "conversion_period": ["2026-07-10", "2032-01-04"],
+  "initial_conversion_price": "12.00",
+  "price_precision": "0.01",
+  "clauses": [
+    {
+      "clause_id": "reset_1",
+      "type": "conversion_price_reset",
+      "description": "向下修正：任意连续30个适用交易日中至少15日收盘价低于当期转股价的85%",
+      "window_days": 30,
+      "required_hits": 15,
+      "comparison": "<",
+      "threshold_ratio": "0.85",
+      "applies_from": "2026-07-10",
+      "applies_until": "2032-01-04",
+      "modifies": ["conversion_price"]
+    },
+    {
+      "clause_id": "call_1",
+      "type": "redemption",
+      "description": "强赎：转股期内任意连续30个适用交易日中至少15日收盘价不低于当期转股价的130%",
+      "window_days": 30,
+      "required_hits": 15,
+      "comparison": ">=",
+      "threshold_ratio": "1.30",
+      "applies_from": "2026-07-10",
+      "applies_until": "2032-01-04",
+      "window_reset_on": ["conversion_price_reset"]
+    },
+    {
+      "clause_id": "put_1",
+      "type": "put",
+      "description": "回售：最后两个计息年度内任意连续30个适用交易日收盘价低于当期转股价的70%",
+      "window_days": 30,
+      "required_hits": 30,
+      "comparison": "<",
+      "threshold_ratio": "0.70",
+      "applies_from": "2030-01-04",
+      "applies_until": "2032-01-04"
+    },
+    {
+      "clause_id": "maturity_1",
+      "type": "maturity",
+      "description": "到期兑付"
+    }
+  ]
+}
