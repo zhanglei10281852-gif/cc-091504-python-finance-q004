@@ -1,0 +1,11 @@
+[
+ {
+  "action_id": "CA_DIV2026",
+  "symbol": "600000",
+  "action_type": "cash_dividend",
+  "params": {"D": "0.30"},
+  "ex_date": "2026-07-06",
+  "announcement_date": "2026-06-28",
+  "status": "active"
+ }
+]

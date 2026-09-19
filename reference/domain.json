@@ -10,5 +10,13 @@
     "temporary",
     "corrected"
   ],
-  "calendar": "CN_equity"
+  "calendar": "CN_equity",
+  "window_kinds": ["m_of_n", "all_of_n"],
+  "excluded_day_reasons": ["suspended", "missing_price", "temporary_only"],
+  "record_status": ["active", "withdrawn"],
+  "rounding": {
+    "conversion_price": {"decimals": 2, "mode": "ROUND_HALF_UP"},
+    "ratio": {"decimals": 4, "mode": "ROUND_HALF_UP"}
+  },
+  "version_fields": ["business_time", "ingested_at", "record_version", "ingest_seq"]
 }

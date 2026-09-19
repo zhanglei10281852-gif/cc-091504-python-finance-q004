@@ -1,0 +1,38 @@
+{
+ "bond_id": "CB_DEMO",
+ "name": "示例转债",
+ "underlying": "600000",
+ "issue_date": "2025-12-15",
+ "maturity_date": "2031-12-15",
+ "maturity_redemption_price": "110.00",
+ "conversion_period": {"start": "2026-06-22", "end": "2031-12-15"},
+ "initial_conversion_price": "10.00",
+ "clauses": [
+  {
+   "clause_id": "call_130",
+   "type": "redemption",
+   "window": {"kind": "m_of_n", "m": 15, "n": 30},
+   "condition": {"op": ">=", "pct": "1.30"},
+   "effective": {"from": "conversion_period_start", "to": "maturity"}
+  },
+  {
+   "clause_id": "reset_085",
+   "type": "conversion_price_reset",
+   "window": {"kind": "m_of_n", "m": 15, "n": 30},
+   "condition": {"op": "<=", "pct": "0.85"},
+   "effective": {"from": "conversion_period_start", "to": "maturity"}
+  },
+  {
+   "clause_id": "put_070",
+   "type": "put",
+   "window": {"kind": "m_of_n", "m": 15, "n": 30},
+   "condition": {"op": "<=", "pct": "0.70"},
+   "effective": {"from": "maturity_minus_years:2", "to": "maturity"},
+   "observe_until": {"trigger_of": "call_130"}
+  },
+  {
+   "clause_id": "maturity_info",
+   "type": "maturity"
+  }
+ ]
+}
